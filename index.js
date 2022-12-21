@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   
 //404 placed at BOTTOM
 app.get('*', (req, res) => {
-    res.status(404).send('<h1>404 Page</h1>')
+    res.render('error404')
 })
 
 //gets port info from ENV file
