@@ -17,12 +17,12 @@ app.engine('jsx', require('express-react-views').createEngine())
 //sets all routes in the places controller relative to /places.
 app.use('/places', require('./controllers/places'))
 
-//hello word or home page
+//GET hello word or home page
 app.get('/', (req, res) => {
     res.render('home')
   })
   
-//404 placed at BOTTOM
+//GET 404 placed at BOTTOM
 app.get('*', (req, res) => {
     res.render('error404')
 })
