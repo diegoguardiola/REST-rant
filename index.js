@@ -3,6 +3,10 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Express Settings
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 //defines the view engine JSX
     /*A template engine works in a rather simple manner:
     you create a template and, with the appropriate syntax, pass 
@@ -11,8 +15,14 @@ const app = express()
     template file. These are compiled in real time as the template 
     gets rendered.*/
     // https://blog.logrocket.com/top-express-js-template-engines-for-dynamic-html-pages/
+app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.static('public'))
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Controllers & Routes
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 //sets all routes in the places controller relative to /places.
 app.use('/places', require('./controllers/places'))
