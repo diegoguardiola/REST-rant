@@ -1,5 +1,12 @@
 h1 {
     text-align: center;
     color: cornflowerblue;
-  }
-  
+}
+
+.row {
+  display: flex; /* or inline-flex */
+}
+
+img {
+  width: 500px;
+}
