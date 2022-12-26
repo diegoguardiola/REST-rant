@@ -7,7 +7,7 @@ function home () {
     return (
       <Def>
           <main>
-              <h1>HOME</h1>
+              <h1>RESR-rant</h1>
               <div>
                 <img src='/images/aron-visuals-4zxSWESyZio-unsplash.jpg' width={800}></img>
                 <div>
