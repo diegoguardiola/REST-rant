@@ -53,6 +53,7 @@ REST-Rant is an app where users can review restaurants.
 | rating    | Number                |
 | comment   | String                |
 | reviewer  | String                |
+| stars     | Number                |
 
 ## Planning
 
