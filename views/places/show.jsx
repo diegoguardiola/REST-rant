@@ -1,5 +1,5 @@
 const React = require('react')
-const Def = require('../default')
+const Def = require('../default.jsx')
 
 function show (data) {
   let comments = (
@@ -43,13 +43,13 @@ function show (data) {
             </h4>
             <h5>
               rating
-              </h5>
+            </h5>
             <a href={`/places/${data.place.id}/edit`} className='btn btn-warning'>
-              Edit
-            </a>
-            <form method ="POST" action = {`/places/${data.place.id}?_method=DELETE`} >
-              <button type='submit' className='btn btn-danger'>DELETE</button>
-            </form>
+                    Edit
+                </a>
+             <form method ="POST" action = {`/places/${data.place.id}?_method=DELETE`} >
+                <button type='submit' className='btn btn-danger'>DELETE</button>
+             </form>
           </div>
           <div className='row'>
               <h2>Comments</h2>

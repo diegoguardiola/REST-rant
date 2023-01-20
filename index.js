@@ -1,41 +1,38 @@
-
-require('dotenv').config()
+//require express package
+//globalizations and configurements 
 const express = require('express')
 const app = express()
+const methodOverride = require('method-override')
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-// Express Settings
-////////////////////////////////////////////////////////////////////////////////////////////////
 
-//defines the view engine JSX
-    /*A template engine works in a rather simple manner:
-    you create a template and, with the appropriate syntax, pass 
-    variables into it. Then, at the appropriate route to render the 
-    template, you assign values to the variables declared in your 
-    template file. These are compiled in real time as the template 
-    gets rendered.*/
-    // https://blog.logrocket.com/top-express-js-template-engines-for-dynamic-html-pages/
+
+//CONFIGURATION
+require('dotenv').config()
+const PORT = process.env.PORT
+
+
+
+//MIDDLEWARE
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
-app.use(express.urlencoded({ extended: true }))
-////////////////////////////////////////////////////////////////////////////////////////////////
-// Controllers & Routes
-////////////////////////////////////////////////////////////////////////////////////////////////
+app.use(express.urlencoded({extended:true}))
+app.use(methodOverride('_method'))
 
-//sets all routes in the places controller relative to /places.
+//CONTROLLERS 
 app.use('/places', require('./controllers/places'))
 
-//GET hello word or home page
 app.get('/', (req, res) => {
     res.render('home')
   })
   
-//GET 404 placed at BOTTOM
+
 app.get('*', (req, res) => {
-    res.render('error404')
+  res.render('error404')
 })
 
-//gets port info from ENV file
-app.listen(process.env.PORT)
+//connection
+app.listen(PORT, ()=> {
+  console.log('Listening on port', PORT)
+})

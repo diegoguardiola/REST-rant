@@ -1,11 +1,11 @@
-const db = require('./models')
+const db = require('../models')
 
 db.Place.create([{
     name: 'H-Thai-ML',
     city: 'Seattle',
     state: 'WA',
     cuisines: 'Thai, Pan-Asian',
-    pic: '/images/h-thai-m-l.jpg',
+    pic: 'https://media-cdn.tripadvisor.com/media/photo-s/19/23/fa/68/thai-thai-restaurant.jpg',
     founded: 1989
 }, {
     name: 'Coding Cat Cafe',
