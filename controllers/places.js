@@ -123,8 +123,17 @@ db.Place.findById(req.params.id)
 })
 
 //DELETE
+//DOES NOT WORK
 router.delete('/:id/rant/:rantId', (req, res) => {
-  res.send('GET /places/:id/rant/:rantId stub')
+  db.Place.findByIdAndDelete(req.body.rant)
+  .then(place => {
+    res.render('places/show', { place })
+  })
+  .catch(err => {
+   console.log('err',err)
+   res.render('error404')
+  })
 })
+
 
 module.exports = router

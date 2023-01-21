@@ -5,7 +5,7 @@ function edit (data) {
     return(
         <Default>
             <main>
-                <h1>Edit Page</h1>
+                <h1>Edit Place</h1>
                 <form method='POST' action={`/places/${data.place.id}?_method=PUT`}>
                     <div className='form-group'>
                         <label htmlFor='name'>Place</label>
@@ -58,7 +58,7 @@ function edit (data) {
                     <input
                         className='btn btn-primary'
                         type='submit'
-                        value='Edit Place'
+                        value='Update Place'
                     />
                 </form>
             </main>
