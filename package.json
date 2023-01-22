@@ -5,11 +5,12 @@
     "express-react-views": "^0.11.0",
     "react": "^18.2.0"
   },
-  "name": "rest-rant",
+  "name": "deployment",        
   "version": "1.0.0",
   "engines": {
     "node": "18.2.0"
-  },
+  }
+  ,
   "main": "index.js",
   "scripts": {
     "start": "node server.js"
